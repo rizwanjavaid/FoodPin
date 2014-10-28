@@ -14,6 +14,7 @@
 		93AA180619FDE8D200EAFA5E /* FoodPinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA180519FDE8D200EAFA5E /* FoodPinTests.swift */; };
 		93AA181019FDE9C500EAFA5E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */; };
 		93AA181219FDF04C00EAFA5E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA181119FDF04C00EAFA5E /* CustomTableViewCell.swift */; };
+		93F7E4C019FFD94C001006D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7E4BF19FFD94C001006D5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		93AA180519FDE8D200EAFA5E /* FoodPinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinTests.swift; sourceTree = "<group>"; };
 		93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		93AA181119FDF04C00EAFA5E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		93F7E4BF19FFD94C001006D5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				93AA17ED19FDE8D200EAFA5E /* Supporting Files */,
 				93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */,
 				93AA181119FDF04C00EAFA5E /* CustomTableViewCell.swift */,
+				93F7E4BF19FFD94C001006D5 /* DetailViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				93AA181219FDF04C00EAFA5E /* CustomTableViewCell.swift in Sources */,
 				93AA181019FDE9C500EAFA5E /* RestaurantTableViewController.swift in Sources */,
 				93AA17F019FDE8D200EAFA5E /* AppDelegate.swift in Sources */,
+				93F7E4C019FFD94C001006D5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				93AA180B19FDE8D200EAFA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93AA180C19FDE8D200EAFA5E /* Build configuration list for PBXNativeTarget "FoodPinTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				93AA180E19FDE8D200EAFA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
