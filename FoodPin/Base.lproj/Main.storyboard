@@ -73,7 +73,14 @@
                             <outlet property="delegate" destination="87k-nW-v7a" id="PKw-9e-gOo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Pin" id="VuL-1q-JuM"/>
+                    <navigationItem key="navigationItem" title="Food Pin" id="VuL-1q-JuM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Huu-YB-sd0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Fg4-MS-cXc" kind="modal" identifier="addRestaurant" id="N0p-Im-FHo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Db0-ff-CwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,14 +182,7 @@
                             <constraint firstAttribute="trailing" secondItem="uZ6-Wd-pFP" secondAttribute="trailing" id="g07-YJ-Rew"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XZ7-NK-Y1k">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Huu-YB-sd0">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="Fg4-MS-cXc" kind="modal" identifier="addRestaurant" id="N0p-Im-FHo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="XZ7-NK-Y1k"/>
                     <connections>
                         <outlet property="addRestaurantBarButton" destination="Huu-YB-sd0" id="ae2-bm-J5t"/>
                         <outlet property="restaurantImageView" destination="XHZ-Ra-TuY" id="7E0-BJ-zvH"/>
@@ -196,7 +196,7 @@
         <!--New Restaurant-->
         <scene sceneID="AVD-8f-Pod">
             <objects>
-                <tableViewController id="hWS-09-w27" sceneMemberID="viewController">
+                <tableViewController id="hWS-09-w27" customClass="AddTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="60w-57-zXY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,6 +318,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newRestaurantImageView" destination="2kH-O5-yhm" id="Z2D-si-aut"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNr-xl-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OCG-cM-Vv0" userLabel="Exit" sceneMemberID="exit"/>

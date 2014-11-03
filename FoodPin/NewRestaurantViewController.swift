@@ -19,5 +19,5 @@ class NewRestaurantViewController: UIViewController {
     @IBAction func close(segue:UIStoryboardSegue){
         
     }
-
+    
 }
