@@ -47,7 +47,8 @@ class RestaurantTableViewController: UITableViewController {
         
         // Empty back button title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-            
+        
+        
         // Auto Layout - Self sizing cells
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
