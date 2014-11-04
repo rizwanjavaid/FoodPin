@@ -34,7 +34,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         // Customize the bar button color
        // UIBarButtonItem.appearance().tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        self.addRestaurantBarButton.tintColor = UIColor.whiteColor()
+        //self.addRestaurantBarButton.tintColor = UIColor.whiteColor()
         
         // Customize the toolbar color
         UIToolbar.appearance().tintColor = UIColor(red: 237.0/255.0, green: 240.0/255.0, blue: 243.0/255.0, alpha: 0.5)

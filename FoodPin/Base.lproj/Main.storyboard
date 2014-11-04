@@ -75,7 +75,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Food Pin" id="VuL-1q-JuM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Huu-YB-sd0">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Fg4-MS-cXc" kind="modal" identifier="addRestaurant" id="N0p-Im-FHo"/>
                             </connections>
@@ -204,13 +203,13 @@
                         <sections>
                             <tableViewSection id="Yzy-Fi-whl">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="250" id="QBh-m2-AtH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="QBh-m2-AtH">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QBh-m2-AtH" id="Jja-xp-i4t">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="2kH-O5-yhm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -229,7 +228,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="22U-h6-TeW">
                                                     <rect key="frame" x="8" y="33" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -290,14 +289,20 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateButtonPressed:" destination="hWS-09-w27" eventType="touchUpInside" id="mYh-IV-6GB"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qg-Wr-Cdp">
                                                     <rect key="frame" x="179" y="33" width="60" height="30"/>
-                                                    <color key="backgroundColor" red="1" green="0.42079025250000002" blue="0.3947454386" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.76645171957671954" green="0.73290666543271299" blue="0.73117316503441132" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="No">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateButtonPressed:" destination="hWS-09-w27" eventType="touchUpInside" id="vXG-Sp-mVb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -306,20 +311,29 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="hWS-09-w27" id="lvg-EW-zfL"/>
+                            <outlet property="dataSource" destination="hWS-09-w27" id="dSn-8l-cH5"/>
                             <outlet property="delegate" destination="hWS-09-w27" id="ra8-62-SNX"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Restaurant" id="u3L-oD-OUj">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="978-in-h3b">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="OCG-cM-Vv0" kind="unwind" unwindAction="close:" id="sOd-p3-o96"/>
+                                <segue destination="OCG-cM-Vv0" kind="unwind" identifier="unwindToHomeScreen" unwindAction="unwindToHomeScreen:" id="FXu-5j-GJG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vYb-q9-Ab8">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="hWS-09-w27" id="gDX-uI-8yL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationTextField" destination="2EO-3A-axe" id="ZaS-GA-JOb"/>
+                        <outlet property="nameTextField" destination="22U-h6-TeW" id="b5z-0h-TL6"/>
                         <outlet property="newRestaurantImageView" destination="2kH-O5-yhm" id="Z2D-si-aut"/>
+                        <outlet property="noButton" destination="9Qg-Wr-Cdp" id="d91-X8-6SP"/>
+                        <outlet property="typeTextField" destination="WYL-n2-F4f" id="3M8-eg-OJq"/>
+                        <outlet property="yesButton" destination="Spq-ZL-SYM" id="0c7-ku-Esd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNr-xl-hZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,7 +502,7 @@ What did you think?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fok-yh-yMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vyH-Ha-spl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2137" y="374"/>
+            <point key="canvasLocation" x="1697" y="1058"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="HCH-Dr-Pa4">
