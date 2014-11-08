@@ -17,6 +17,7 @@
 		93AA180619FDE8D200EAFA5E /* FoodPinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA180519FDE8D200EAFA5E /* FoodPinTests.swift */; };
 		93AA181019FDE9C500EAFA5E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */; };
 		93AA181219FDF04C00EAFA5E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA181119FDF04C00EAFA5E /* CustomTableViewCell.swift */; };
+		93AB78461A0C6181007149A4 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AB78441A0C6181007149A4 /* FoodPin.xcdatamodeld */; };
 		93C8C0E61A06D2F0001417C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C8C0E51A06D2F0001417C0 /* MapKit.framework */; };
 		93C8C0EC1A06E065001417C0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8C0EB1A06E065001417C0 /* MapViewController.swift */; };
 		93D1406C1A011FD500C2AE7A /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1406B1A011FD500C2AE7A /* Restaurant.swift */; };
@@ -49,6 +50,7 @@
 		93AA180519FDE8D200EAFA5E /* FoodPinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinTests.swift; sourceTree = "<group>"; };
 		93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		93AA181119FDF04C00EAFA5E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		93AB78451A0C6181007149A4 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		93C8C0E51A06D2F0001417C0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93C8C0EB1A06E065001417C0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		93D1406B1A011FD500C2AE7A /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -99,10 +101,10 @@
 			children = (
 				93AA17EF19FDE8D200EAFA5E /* AppDelegate.swift */,
 				93AA17F319FDE8D200EAFA5E /* Main.storyboard */,
+				93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */,
 				93AA17F619FDE8D200EAFA5E /* Images.xcassets */,
 				93AA17F819FDE8D200EAFA5E /* LaunchScreen.xib */,
 				93AA17ED19FDE8D200EAFA5E /* Supporting Files */,
-				93AA180F19FDE9C500EAFA5E /* RestaurantTableViewController.swift */,
 				93AA181119FDF04C00EAFA5E /* CustomTableViewCell.swift */,
 				93F7E4BF19FFD94C001006D5 /* DetailViewController.swift */,
 				93D1406B1A011FD500C2AE7A /* Restaurant.swift */,
@@ -111,6 +113,7 @@
 				937932B91A0597EB0062F283 /* ShareViewController.swift */,
 				93C8C0EB1A06E065001417C0 /* MapViewController.swift */,
 				9392ABF21A07A6EF001278DA /* AddTableViewController.swift */,
+				93AB78441A0C6181007149A4 /* FoodPin.xcdatamodeld */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D44E931A027BA90027CB24 /* DetailTableViewCell.swift in Sources */,
+				93AB78461A0C6181007149A4 /* FoodPin.xcdatamodeld in Sources */,
 				9392ABF31A07A6EF001278DA /* AddTableViewController.swift in Sources */,
 				93D1406C1A011FD500C2AE7A /* Restaurant.swift in Sources */,
 				937932B81A0508E20062F283 /* ReviewViewController.swift in Sources */,
@@ -461,6 +465,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		93AB78441A0C6181007149A4 /* FoodPin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				93AB78451A0C6181007149A4 /* FoodPin.xcdatamodel */,
+			);
+			currentVersion = 93AB78451A0C6181007149A4 /* FoodPin.xcdatamodel */;
+			path = FoodPin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 93AA17E219FDE8D200EAFA5E /* Project object */;
 }

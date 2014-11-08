@@ -12,7 +12,11 @@ class ReviewViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView:UIImageView!
     @IBOutlet weak var dialogView:UIView!
-    
+    @IBOutlet weak var goodReviewButton: UIButton!
+    @IBOutlet weak var badReviewButton: UIButton!
+    @IBOutlet weak var greatReviewButton: UIButton!
+    var restaurant:Restaurant!
+    var review:String!
     
     override func viewDidLoad() {
         
@@ -47,5 +51,56 @@ class ReviewViewController: UIViewController {
             }, completion: nil)
         
     }
+    
+    @IBAction func reviewButtonSelected(sender: UIButton) {
+        
+        let buttonClicked = sender as UIButton
+        
+        // When Bad Review button is clicked
+        if buttonClicked == badReviewButton {
+           review = "Bad"
+            badReviewButton.backgroundColor = UIColor(red: 255.0/255.0, green: 5.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            goodReviewButton.backgroundColor = UIColor.grayColor()
+            greatReviewButton.backgroundColor = UIColor.grayColor()
+            
+            // Execute the unwind segue once the values have been extracted
+            performSegueWithIdentifier("unwindToViewController", sender: self)
+            
+            println("Bad Review Button Clicked")
+
+        
+       
+        } else if buttonClicked == goodReviewButton {
+           
+            // When Good Review button is clicked
+            review = "Good"
+            goodReviewButton.backgroundColor = UIColor(red: 255.0/255.0, green: 128.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            badReviewButton.backgroundColor = UIColor.grayColor()
+            greatReviewButton.backgroundColor = UIColor.grayColor()
+            
+            // Execute the unwind segue once the values have been extracted
+            performSegueWithIdentifier("unwindToViewController", sender: self)
+            
+            println("Good Review Button Clicked")
+            
+            
+        } else if buttonClicked == greatReviewButton {
+          
+            // When Great Review button is clicked
+            review = "Great"
+            greatReviewButton.backgroundColor = UIColor(red: 17.0/255.0, green: 197.0/255.0, blue: 2.0/255.0, alpha: 1.0)
+            badReviewButton.backgroundColor = UIColor.grayColor()
+            goodReviewButton.backgroundColor = UIColor.grayColor()
+            
+            // Execute the unwind segue once the values have been extracted
+            performSegueWithIdentifier("unwindToViewController", sender: self)
+            
+            println("Great Review Button Clicked")
+
+            
+        }
+        
+    }
+    
 
 }

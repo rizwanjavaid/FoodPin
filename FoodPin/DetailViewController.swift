@@ -27,17 +27,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.restaurantImageView.image = UIImage(named: restaurant.image)
-        self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1)
+        self.restaurantImageView.image = UIImage(data: restaurant.image)
+        self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1.0)
         title = self.restaurant.name
-        
-        // Customize the bar button color
-       // UIBarButtonItem.appearance().tintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-        //self.addRestaurantBarButton.tintColor = UIColor.whiteColor()
-        
-        // Customize the toolbar color
-        UIToolbar.appearance().tintColor = UIColor(red: 237.0/255.0, green: 240.0/255.0, blue: 243.0/255.0, alpha: 0.5)
         
         
         // Auto Layout - Self sizing cells
@@ -77,7 +69,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Visited:"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I’ve been here before" : "No"
+            cell.valueLabel.text = (restaurant.isVisited.boolValue) ? "Yes" : "No"
             cell.mapButton.hidden = true
         default:
             cell.fieldLabel.text = ""
@@ -87,7 +79,14 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-    @IBAction func close(segue:UIStoryboardSegue){
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as DetailTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        return cell
+    }
+    
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue){
         
     }
     

@@ -14,5 +14,5 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel:UILabel!
     @IBOutlet weak var mapButton:UIButton!
 
-
+    
 }

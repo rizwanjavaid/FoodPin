@@ -27,7 +27,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         // Convert address to Coordinate and annotate it on map
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString("524 Ct St, Brooklyn, NY 11231", completionHandler: { placemarks, error in
+        geoCoder.geocodeAddressString(self.restaurant.location, completionHandler: { placemarks, error in
             
             // Process the Placemark
             if error != nil {
@@ -73,7 +73,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
-        leftIconView.image = UIImage(named: restaurant.image)
+        leftIconView.image = UIImage(data: restaurant.image)
         annotationView.leftCalloutAccessoryView = leftIconView
         
         return annotationView

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
     
@@ -90,11 +91,25 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         }
         
         
-        // If all fields are filled in correctly, extract the field values
-        println("Name" + self.nameTextField.text)
-        println("Type" + self.typeTextField.text)
-        println("Location" + self.locationTextField.text)
-        println("Have you been here" + (isVisited ? "yes" : "no" ))
+        // Get the managed object context from AppDelegate
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+        
+            // Create a managed object for the Restaurant entity
+            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as Restaurant
+            restaurant.name = nameTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.location = locationTextField.text
+            restaurant.image = UIImagePNGRepresentation(newRestaurantImageView.image)
+            restaurant.isVisited = isVisited
+            
+            // Tell the context to save the new object into database
+            var e:NSError?
+            if managedObjectContext.save(&e) != true {
+                println("insert error: \(e!.localizedDescription)")
+                return
+            }
+            
+        }
         
         // Execute the unwind segue once the values have been extracted
         performSegueWithIdentifier("unwindToHomeScreen", sender: self)

@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OQu-EI-FtC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,6 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="esW-nh-6rH">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="FfG-kP-rbc" customClass="CustomTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -105,13 +112,13 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wmQ-UL-Wsh" customClass="DetailTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wmQ-UL-Wsh" customClass="DetailTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wmQ-UL-Wsh" id="Vul-Ha-vxL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="261" verticalHuggingPriority="251" text="Field" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzQ-RP-y53">
-                                                    <rect key="frame" x="8" y="8" width="34.5" height="20.5"/>
+                                                    <rect key="frame" x="8" y="8" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -122,7 +129,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoT-gO-mAy">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoT-gO-mAy">
                                                     <rect key="frame" x="259" y="3" width="54" height="30"/>
                                                     <state key="normal" title="Map It">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,15 +140,21 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="CoT-gO-mAy" firstAttribute="firstBaseline" secondItem="jzQ-RP-y53" secondAttribute="baseline" id="5Sl-o8-bWz"/>
+                                                <constraint firstItem="CoT-gO-mAy" firstAttribute="centerY" secondItem="jzQ-RP-y53" secondAttribute="centerY" id="67L-U3-bAC"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="jzQ-RP-y53" secondAttribute="bottom" id="8TS-Xy-ctJ"/>
                                                 <constraint firstItem="EW8-e5-bgu" firstAttribute="leading" secondItem="Vul-Ha-vxL" secondAttribute="leadingMargin" constant="72" id="9mq-Co-H4n"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EW8-e5-bgu" secondAttribute="trailing" constant="72" id="DYf-hx-SaY"/>
+                                                <constraint firstItem="CoT-gO-mAy" firstAttribute="baseline" secondItem="jzQ-RP-y53" secondAttribute="baseline" id="ERo-2P-AdC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CoT-gO-mAy" secondAttribute="trailing" constant="-1" id="EjE-50-vZd"/>
                                                 <constraint firstItem="jzQ-RP-y53" firstAttribute="leading" secondItem="Vul-Ha-vxL" secondAttribute="leadingMargin" id="F8o-xm-FSw"/>
+                                                <constraint firstItem="CoT-gO-mAy" firstAttribute="leading" secondItem="EW8-e5-bgu" secondAttribute="trailing" constant="19" id="Jha-Yq-2xR"/>
                                                 <constraint firstItem="jzQ-RP-y53" firstAttribute="top" secondItem="Vul-Ha-vxL" secondAttribute="topMargin" id="LpJ-dJ-5nE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="EW8-e5-bgu" secondAttribute="bottom" constant="-0.5" id="pOU-i8-W2m"/>
                                                 <constraint firstItem="EW8-e5-bgu" firstAttribute="top" secondItem="Vul-Ha-vxL" secondAttribute="topMargin" id="xEg-Dv-YOh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="fieldLabel" destination="jzQ-RP-y53" id="dxI-wn-sBh"/>
                                             <outlet property="mapButton" destination="CoT-gO-mAy" id="2BB-n4-i8U"/>
@@ -208,8 +221,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QBh-m2-AtH" id="Jja-xp-i4t">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="2kH-O5-yhm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="2kH-O5-yhm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                                                    <color key="backgroundColor" red="1" green="0.42079025250000002" blue="0.3947454386" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -318,7 +332,7 @@
                     <navigationItem key="navigationItem" title="New Restaurant" id="u3L-oD-OUj">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="978-in-h3b">
                             <connections>
-                                <segue destination="OCG-cM-Vv0" kind="unwind" identifier="unwindToHomeScreen" unwindAction="unwindToHomeScreen:" id="FXu-5j-GJG"/>
+                                <segue destination="OCG-cM-Vv0" kind="unwind" identifier="unwindToHomeScreen" unwindAction="unwindToHomeScreen:" id="aMM-m2-np0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="vYb-q9-Ab8">
@@ -378,10 +392,13 @@ What did you think?</string>
                                                 <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reviewButtonSelected:" destination="U99-zA-0Le" eventType="touchUpInside" id="KTN-EW-ndP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuK-hU-pDE">
                                         <rect key="frame" x="192" y="263" width="46" height="46"/>
-                                        <color key="backgroundColor" red="0.065023127769999994" green="0.77132936510000005" blue="0.0087724423659999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.066666666666666666" green="0.77254901960784317" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" backgroundImage="great"/>
                                         <userDefinedRuntimeAttributes>
@@ -389,6 +406,9 @@ What did you think?</string>
                                                 <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reviewButtonSelected:" destination="U99-zA-0Le" eventType="touchUpInside" id="A9E-Ts-rcn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8n-qt-gO9">
                                         <rect key="frame" x="232" y="13" width="30" height="30"/>
@@ -396,7 +416,7 @@ What did you think?</string>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="uUj-6v-b2a" kind="unwind" unwindAction="close:" id="9nY-S3-8Jb"/>
+                                            <segue destination="uUj-6v-b2a" kind="unwind" identifier="unwindToViewController" unwindAction="unwindToViewController:" id="BG3-lw-gw2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvv-Hi-ucT">
@@ -409,6 +429,9 @@ What did you think?</string>
                                                 <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reviewButtonSelected:" destination="U99-zA-0Le" eventType="touchUpInside" id="sYz-yV-0Ah"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -418,7 +441,10 @@ What did you think?</string>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="WCy-XE-HkD" id="QP5-BT-C4I"/>
+                        <outlet property="badReviewButton" destination="Xvv-Hi-ucT" id="KlU-xk-Kkd"/>
                         <outlet property="dialogView" destination="3nx-cV-5gs" id="GJH-mP-PFe"/>
+                        <outlet property="goodReviewButton" destination="3se-4l-xYu" id="1eu-FZ-xXq"/>
+                        <outlet property="greatReviewButton" destination="wuK-hU-pDE" id="qN1-Ft-3LP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w16-wl-7X6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,7 +477,7 @@ What did you think?</string>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="vyH-Ha-spl" kind="unwind" unwindAction="close:" id="nDP-OZ-q36"/>
+                                            <segue destination="vyH-Ha-spl" kind="unwind" unwindAction="unwindToViewController:" id="y1k-av-w35"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlI-1Y-TvZ">
